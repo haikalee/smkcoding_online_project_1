@@ -20,7 +20,8 @@
     <EditText
         android:id="@+id/edt_umur"
         style="@style/StyleInput"
-        android:hint="Umur(th)" />
+        android:hint="Umur(th)"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/edt_email"
@@ -43,7 +44,8 @@
         android:id="@+id/btn_simpan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="simpan" />
+        android:text="simpan"
+        android:background="@drawable/button"
+        android:textColor="@android:color/white"/>
 
 </LinearLayout>
