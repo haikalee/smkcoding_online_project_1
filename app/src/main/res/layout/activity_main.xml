@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <EditText
+        android:id="@+id/edt_nama"
+        style="@style/StyleInput"
+        android:hint="Nama" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Spinner
+        android:id="@+id/spinner_jenis_kelamin"
+        style="@style/StyleInput"
+        android:entries="@array/jenis_kelamin" />
+
+    <EditText
+        android:id="@+id/edt_umur"
+        style="@style/StyleInput"
+        android:hint="Umur(th)" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:inputType="textEmailAddress"
+        style="@style/StyleInput"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/edt_telp"
+        style="@style/StyleInput"
+        android:hint="Telp"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/edt_alamat"
+        style="@style/StyleInput"
+        android:hint="Alamat" />
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="simpan" />
+
+</LinearLayout>
