@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditProfile" />
-        <activity android:name=".About" />
+        <activity android:name=".About"
+            android:theme="@style/aboutTheme"/>
         <activity android:name=".Profile" />
         <activity android:name=".MainActivity" />
     </application>
