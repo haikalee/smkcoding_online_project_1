@@ -17,6 +17,8 @@
         android:id="@+id/btn_edit_nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:textColor="@android:color/white"
         android:text="Simpan"/>
 
 </LinearLayout>
