@@ -1,172 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile">
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="match_parent"
+        android:background="#AADCCDDC">
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="167dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="-11dp" />
+
         <TextView
             android:id="@+id/tv_biodata"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Biodata"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="25sp" />
-        <ImageView
-            android:id="@+id/img_view_profile"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_person"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tv_biodata"
-            android:layout_marginTop="10dp" />
-        <LinearLayout
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:translationY="20dp"
+            tools:ignore="MissingConstraints" />
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/img_view_profile"
-            android:orientation="vertical" >
-            <LinearLayout
+            tools:ignore="MissingConstraints">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp">
-                <TextView
+                android:layout_height="635dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/background_card"
+                android:paddingTop="30dp"
+                android:translationY="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/img_view_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_person" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Nama"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_nama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="nama"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Gender"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gender"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Umur"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_umur"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Umur"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Email"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Telp"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_telp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Telp"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="16dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="Alamat"
-                    style="@style/StyleViewProfile" />
-                <TextView
-                    android:id="@+id/tv_profile_alamat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Alamat"
-                    android:layout_weight="1"
-                    style="@style/StyleViewProfile"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <Button
-                    android:id="@+id/btn_edt_nama"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="EDIT NAMA"
-                    android:layout_margin="10dp"/>
-                <Button
-                    android:id="@+id/btn_dial"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="DIAL"
-                    android:layout_margin="10dp"/>
-                <Button
-                    android:id="@+id/btn_about"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ABOUT"
-                    android:layout_margin="10dp"/>
-            </LinearLayout>
-        </LinearLayout>
-    </RelativeLayout>
-</ScrollView>
+                    android:layout_below="@id/img_view_profile"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Nama" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_nama"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="nama" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Gender" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_gender"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Gender" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Umur" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_umur"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Umur" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Email" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_email"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Email" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Telp" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_telp"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Telp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Alamat" />
+
+                        <TextView
+                            android:id="@+id/tv_profile_alamat"
+                            style="@style/StyleViewProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Alamat" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_edt_nama"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="EDIT NAMA" />
+
+                        <Button
+                            android:id="@+id/btn_dial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="DIAL" />
+
+                        <Button
+                            android:id="@+id/btn_about"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="ABOUT" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -33,7 +33,17 @@ class Profile : AppCompatActivity() {
         btn_edt_nama.setOnClickListener {
             val moveEdit = Intent(this@Profile, EditProfile::class.java)
             val nama = tv_profile_nama.text.toString()
+            val gender = tv_profile_gender.text.toString()
+            val email = tv_profile_email.text.toString()
+            val telp = tv_profile_telp.text.toString()
+            val umur = tv_profile_umur.text.toString()
+            val alamat = tv_profile_alamat.text.toString()
             moveEdit.putExtra("nama", nama)
+            moveEdit.putExtra("gender", gender)
+            moveEdit.putExtra("email", email)
+            moveEdit.putExtra("telp", telp)
+            moveEdit.putExtra("umur", umur)
+            moveEdit.putExtra("alamat", alamat)
             startActivityForResult(moveEdit, REQUEST_CODE)
         }
 
@@ -60,8 +70,18 @@ class Profile : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode == REQUEST_CODE){
             if(resultCode == Activity.RESULT_OK) {
-                val result = data?.getStringExtra("nama")
-                tv_profile_nama.text = result
+                val resultNama = data?.getStringExtra("nama")
+                val resultGender = data?.getStringExtra("gender")
+                val resultAlamat = data?.getStringExtra("alamat")
+                val resultEmail = data?.getStringExtra("email")
+                val resultTelp = data?.getStringExtra("telp")
+                val resultUmur = data?.getStringExtra("umur")
+                tv_profile_nama.text = resultNama
+                tv_profile_gender.text = resultGender
+                tv_profile_alamat.text = resultAlamat
+                tv_profile_email.text = resultEmail
+                tv_profile_telp.text = resultTelp
+                tv_profile_umur.text = resultUmur
             } else {
                 Toast.makeText(this@Profile, "Gagal Edit", Toast.LENGTH_SHORT).show()
             }
