@@ -1,8 +1,11 @@
 package com.haikal.myapplication
 
+import android.app.ActivityOptions
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -22,7 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         setSpinner()
 
-        btn_simpan.setOnClickListener {ambilInput()}
+        btn_simpan.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            btn_simpan.startAnimation(animation)
+            ambilInput()
+        }
         setActionBarTitle("Biodata")
     }
 
@@ -69,8 +76,9 @@ class MainActivity : AppCompatActivity() {
         bundle.putString("telp", inputTelp)
         bundle.putString("umur", inputUmur)
         bundle.putString("gender", inputJenisKelamin)
-
         move.putExtras(bundle)
-        startActivity(move)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            startActivity(move, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+        }
     }
 }

@@ -1,12 +1,14 @@
 package com.haikal.myapplication
 
-import android.annotation.SuppressLint
 import android.app.ActionBar
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_profile.*
 
@@ -27,12 +29,18 @@ class Profile : AppCompatActivity() {
         btn_dial.setOnClickListener {
             val no = "08816253226"
             val moveDial = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$no"))
+            val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            btn_dial.startAnimation(animation)
             startActivity(moveDial)
         }
 
         btn_about.setOnClickListener {
             val moveAbout = Intent(this@Profile, About::class.java)
-            startActivity(moveAbout)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                startActivity(moveAbout, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            }
+            val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            btn_about.startAnimation(animation)
         }
 
         btn_edt_nama.setOnClickListener {
@@ -49,6 +57,8 @@ class Profile : AppCompatActivity() {
             moveEdit.putExtra("telp", telp)
             moveEdit.putExtra("umur", umur)
             moveEdit.putExtra("alamat", alamat)
+            val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            btn_edt_nama.startAnimation(animation)
             startActivityForResult(moveEdit, REQUEST_CODE)
         }
     }

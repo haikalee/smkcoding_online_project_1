@@ -1,10 +1,10 @@
 package com.haikal.myapplication
 
-import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 
@@ -28,7 +28,11 @@ class EditProfile : AppCompatActivity() {
         edt_edit_telp.setText(telp)
         edt_edit_umur.setText(umur)
         edt_edit_alamat.setText(alamat)
-        btn_edit_profile.setOnClickListener { saveData() }
+        btn_edit_profile.setOnClickListener {
+            val animation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+            btn_edit_profile.startAnimation(animation)
+            saveData()
+        }
     }
 
     private fun saveData() {
