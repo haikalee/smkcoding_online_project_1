@@ -1,5 +1,6 @@
 package com.haikal.myapplication
 
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -57,4 +58,6 @@ class EditProfile : AppCompatActivity() {
         adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
         spinner_edit_gender.adapter = adapter
     }
+
+
 }

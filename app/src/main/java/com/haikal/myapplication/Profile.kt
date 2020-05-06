@@ -1,5 +1,7 @@
 package com.haikal.myapplication
 
+import android.annotation.SuppressLint
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -19,6 +21,9 @@ class Profile : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         showProfile()
 
+        if(supportActionBar != null) {
+            (supportActionBar as ActionBar).title = "Profile"
+        }
         btn_dial.setOnClickListener {
             val no = "08816253226"
             val moveDial = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$no"))
@@ -46,7 +51,6 @@ class Profile : AppCompatActivity() {
             moveEdit.putExtra("alamat", alamat)
             startActivityForResult(moveEdit, REQUEST_CODE)
         }
-
     }
 
     private fun showProfile() {

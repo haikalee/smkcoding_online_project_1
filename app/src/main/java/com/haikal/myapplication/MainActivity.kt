@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,13 @@ class MainActivity : AppCompatActivity() {
         setSpinner()
 
         btn_simpan.setOnClickListener {ambilInput()}
+        setActionBarTitle("Biodata")
+    }
+
+    fun setActionBarTitle(title: String) {
+        if(supportActionBar != null) {
+            (supportActionBar as ActionBar).title = title
+        }
     }
 
     private fun ambilInput() {
